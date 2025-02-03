@@ -29,4 +29,4 @@ def index():
     return render_template('index.html', expenses=expenses, total_expense=total_expense)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
