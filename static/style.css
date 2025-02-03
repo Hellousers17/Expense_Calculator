@@ -1,0 +1,108 @@
+body {
+    display: flex;
+    font-family: Arial, sans-serif;
+    justify-content: center;
+    background-image: url("https://imgs.search.brave.com/SaN_c10NBzemP0rtZc8U-bYn9sCAwKcEli4Zjbzpujw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxOC8w/Ni8wNC8xOC8zMi9y/aGluZS1yaXZlci0z/NDUzODYwXzEyODAu/anBn");
+    background-size: 100% 105%;
+}
+
+.container {
+    margin: 4.4cm;
+    max-width: 600px;
+    padding: 20px;
+    background-color: rgb(0, 9, 177);
+    border: 3px solid  black;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+}
+
+h1, h2, h3 {
+    color: #ffffff;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input[type="text"], input[type="number"] {
+    width: calc(50% - 10px);
+    padding: 10px;
+    margin-right: 10px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+ul {
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        justify-content: center;
+    }
+    
+    .container {
+        max-width: 600px;
+        background: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        justify-content: center;
+    }
+    
+    h1, h2, h3 {
+        color: #333;
+    }
+    
+    form {
+        margin-bottom: 20px;
+    }
+    
+    input[type="text"], input[type="number"] {
+        width: calc(50% - 10px);
+        padding: 10px;
+        margin-right: 10px;
+    }
+    
+    button {
+        padding: 10px 15px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #218838;
+    }
+    
+    ul {
+        padding: 0;
+        overflow: scroll;
+}
+
+li {
+    margin: 5px 0;
+    color: white;
+}
+
+.success {
+    color: rgb(255, 255, 255);
+}
+
+.danger {
+    color: red;
+}
+}
