@@ -2,22 +2,16 @@
     "builds": [{ "src": "app.py", "use": "@vercel/python"}],
     "routes": [{ "src": "/(.*)", "dest": "app.py"}],
     "files" : {
-        "exclude": [
-    "**/*.pyc",
-    "**/__pycache__/**",
-    ".env",
-    ".gitignore/**",
-    ".venv/**",
-    "automations/**",
-    "docs/**",
-    "logdir/**",
-    "tests/**",
-    "prisma/migrations/**",
-    "Dockerfile",
-    "README.txt",
-    "pytest.ini",
-    "package.json"
-  ]
+        "include": [
+        "style.css",
+        "budget_settings.html",
+        "home.html",
+        "login.html",
+        "signup.html",
+        "app.py",
+        "requirements.txt",
+        "vercel.json"
+        ]
     }
     
 }
