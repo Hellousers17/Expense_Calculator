@@ -14,7 +14,7 @@
     "tests/**",
     "prisma/migrations/**",
     "Dockerfile",
-    "README.md",
+    "README.txt",
     "pytest.ini",
     "package.json"
   ]
