@@ -1,4 +1,23 @@
 {
     "builds": [{ "src": "app.py", "use": "@vercel/python"}],
-    "routes": [{ "src": "/(.*)", "dest": "app.py"}]
+    "routes": [{ "src": "/(.*)", "dest": "app.py"}],
+    "files" : {
+        "exclude": [
+    "**/*.pyc",
+    "**/__pycache__/**",
+    ".env",
+    ".gitignore/**",
+    ".venv/**",
+    "automations/**",
+    "docs/**",
+    "logdir/**",
+    "tests/**",
+    "prisma/migrations/**",
+    "Dockerfile",
+    "README.md",
+    "pytest.ini",
+    "package.json"
+  ]
+    }
+    
 }
