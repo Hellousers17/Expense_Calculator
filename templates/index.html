@@ -13,6 +13,7 @@
             <input type="text" name="description" placeholder="Expense Description" required>
             <input type="number" name="amount" placeholder="Amount" step="0.01" required><br>
             <button type="submit">Add Expense</button>
+            <button class="set_budget" type="button"><a href="{{ url_for('budget_settings') }}">Add Budget</a></button>
         </form>
 
         {% with messages = get_flashed_messages(with_categories=true) %}
@@ -32,6 +33,10 @@
                 <li>{{ expense.description }}: ₹{{ expense.amount }}</li>
             {% endfor %}
         </ul>
+        
+        {% if budget_exceeded %}
+            <h3 style="color: red;">Budget Exceeded!</h3>
+        {% endif %}
     </div>
 </body>
 </html>

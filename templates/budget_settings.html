@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Set_Budget</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Set Budget Limits</h1>
+        <form method="POST">
+            <input type="number" name="daily_budget" placeholder="Daily Budget" step="0.01" value="{{ budget_limits['daily'] }}">
+            <input type="number" name="weekly_budget" placeholder="Weekly Budget" step="0.01" value="{{ budget_limits['weekly'] }}">
+            <input type="number" name="monthly_budget" placeholder="Monthly Budget" step="0.01" value="{{ budget_limits['monthly'] }}">
+            <button type="submit">Set Budget</button>
+        </form>
+        <a href="{{ url_for('index') }}">Back to Expenses</a>
+    </div>
+</body>
+</html>

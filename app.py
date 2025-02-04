@@ -6,10 +6,17 @@ app.secret_key = 'your_secret_key'  # Change this to a random secret key
 # List to store expenses
 expenses = []
 
+# In-memory user storage (for demonstration purposes)
 users = {}
 
-@app.route('/')
+# Budget limits
+budget_limits = {
+    'daily': None,
+    'weekly': None,
+    'monthly': None
+}
 
+@app.route('/')
 def home():
     return render_template('home.html')
 
@@ -43,9 +50,24 @@ def signup():
 
     return render_template('signup.html')
 
+@app.route('/set_budget', methods=['GET', 'POST'])
+def budget_settings():
+    if request.method == 'POST':
+        daily_budget = request.form.get('daily_budget')
+        weekly_budget = request.form.get('weekly_budget')
+        monthly_budget = request.form.get('monthly_budget')
 
-@app.route('/expenses', methods=['GET', 'POST'])
+        global budget_limits
+        budget_limits['daily'] = float(daily_budget) if daily_budget else None
+        budget_limits['weekly'] = float(weekly_budget) if weekly_budget else None
+        budget_limits['monthly'] = float(monthly_budget) if monthly_budget else None
 
+        flash('Budget limits set successfully!', 'success')
+        return redirect(url_for('index'))
+
+    return render_template('budget_settings.html', budget_limits=budget_limits)
+
+@app.route('/expense', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         # Get the expense details from the form
@@ -65,7 +87,17 @@ def index():
         return redirect(url_for('index'))
 
     total_expense = sum(expense['amount'] for expense in expenses)
-    return render_template('index.html', expenses=expenses, total_expense=total_expense)
+
+    # Check if budget is exceeded
+    budget_exceeded = False
+    if budget_limits['daily'] is not None and total_expense > budget_limits['daily']:
+        budget_exceeded = True
+    elif budget_limits['weekly'] is not None and total_expense > budget_limits['weekly']:
+        budget_exceeded = True
+    elif budget_limits['monthly'] is not None and total_expense > budget_limits['monthly']:
+        budget_exceeded = True
+
+    return render_template('index.html', expenses=expenses, total_expense=total_expense, budget_exceeded=budget_exceeded)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)

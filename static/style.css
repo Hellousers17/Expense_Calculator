@@ -106,3 +106,12 @@ li {
     color: red;
 }
 }
+
+a{
+    color: red;
+}
+
+.set_budget a{
+    color: black;
+    text-decoration-line: none;
+}
