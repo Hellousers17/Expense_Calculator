@@ -1,17 +1,4 @@
 {
     "builds": [{ "src": "app.py", "use": "@vercel/python"}],
-    "routes": [{ "src": "/(.*)", "dest": "app.py"}],
-    "files" : {
-        "include": [
-        "style.css",
-        "budget_settings.html",
-        "home.html",
-        "login.html",
-        "signup.html",
-        "app.py",
-        "requirements.txt",
-        "vercel.json"
-        ]
-    }
-    
+    "routes": [{ "src": "/(.*)", "dest": "app.py"}]  
 }
